@@ -52,12 +52,14 @@
       "pendingApproval": "في انتظار الموافقة",
       "newOrder": "طلب جديد!",
       "orderNumber": "رقم الطلب",
+      "newOrderNotification": "طلب جديد #{{orderNumber}} - {{totalAmount}} {{currency}}",
       "orderUpdated": "تم تحديث الطلب",
       "statusChanged": "تم تغيير الحالة إلى",
       "loadError": "خطأ في تحميل طلبات نقاط البيع",
       "updateError": "خطأ في تحديث حالة الطلب",
       "online": "متصل",
-      "offline": "غير متصل"
+      "offline": "غير متصل",
+      "tableBadge": "طاولة #{{tableNumber}}"
     },
     "status": {
       "new": "جديد",
@@ -112,7 +114,14 @@
       "totalCapacity": "إجمالي السعة",
       "edit": "تعديل",
       "noTables": "لا توجد طاولات مضافة بعد",
-      "addFirstTable": "إضافة أول طاولة"
+      "addFirstTable": "إضافة أول طاولة",
+      "loginRequired": "يجب تسجيل الدخول أولاً",
+      "tableNumberPlaceholder": "مثال: 1",
+      "person": "شخص",
+      "people": "أشخاص",
+      "locationPlaceholder": "مثال: الدور الأول، النافذة، الشرفة",
+      "tableTitle": "طاولة #{{number}}",
+      "noQrCode": "لا يوجد رمز QR لهذه الطاولة"
     },
     "notifications": {
       "title": "إعدادات الإشعارات",
@@ -127,7 +136,9 @@
       "description": "أنت غير متصل بالإنترنت، سيتم مزامنة التغييرات عند عودة الاتصال",
       "queuedOrders": "طلبات في قائمة الانتظار",
       "syncPending": "في انتظار المزامنة",
-      "syncComplete": "تم التزامن"
+      "syncComplete": "تم التزامن",
+      "syncSuccessMessage": "تم تزامن {{count}} طلب",
+      "syncSuccessMessage_plural": "تم تزامن {{count}} طلبات"
     }
   },
   "auth": {
@@ -426,12 +437,12 @@
     "welcome": "مرحباً بك {{name}}",
     "stats": {
       "totalRestaurants": "إجمالي المطاعم",
-      "paidPlans": "الخطط المدفوعة",
-      "activeAccounts": "الحسابات النشطة",
-      "analytics": "التحليلات",
       "activeCount": "{{count}} نشط",
+      "paidPlans": "الخطط المدفوعة",
       "outOfTotal": "من أصل {{total}}",
+      "activeAccounts": "الحسابات النشطة",
       "activityPercentage": "{{percentage}}% نشط",
+      "analytics": "التحليلات",
       "analyticsDescription": "عرض تحليلات مفصلة"
     },
     "tenantsManagement": {
@@ -474,7 +485,7 @@
   },
   "plans": {
     "basic": "أساسي",
-    "premium": "متقدم",
+    "premium": "مميز",
     "enterprise": "مؤسسي"
   },
   "features": {
