@@ -49,7 +49,7 @@ interface POSOrder {
 }
 
 export const POSDashboard: React.FC = () => {
-  const { t, isRTL } = useTranslation();
+  const { t, isRTL, language } = useTranslation();
   const { user, profile } = useAuth();
   const [orders, setOrders] = useState<POSOrder[]>([]);
   const [loading, setLoading] = useState(true);
@@ -151,6 +151,29 @@ export const POSDashboard: React.FC = () => {
     }
   };
 
+  const fetchAndCacheTable = async (tableId: string) => {
+    if (tablesMap[tableId]) return;
+
+    try {
+      const { data, error } = await supabase
+        .from('restaurant_tables')
+        .select('id, table_number')
+        .eq('id', tableId)
+        .single();
+
+      if (error) throw error;
+
+      if (data) {
+        setTablesMap(prev => ({
+          ...prev,
+          [data.id]: { table_number: data.table_number }
+        }));
+      }
+    } catch (error) {
+      console.error(`Error fetching and caching table ${tableId}:`, error);
+    }
+  };
+
   const subscribeToOrders = () => {
     const channel = supabase
       .channel('pos-orders-changes')
@@ -168,9 +191,17 @@ export const POSDashboard: React.FC = () => {
           if (payload.eventType === 'INSERT') {
             const newOrder = payload.new as POSOrder;
             setOrders(prev => [newOrder, ...prev]);
+
+            if (newOrder.table_id && !tablesMap[newOrder.table_id]) {
+              fetchAndCacheTable(newOrder.table_id);
+            }
             
             // Show notification for new orders
-            toast.success(`${t('pos.dashboard.newOrder')} - ${t('pos.dashboard.orderNumber')} ${newOrder.order_number} - ${newOrder.total_amount} ${t('common.currency')}`);
+            toast.success(t('pos.dashboard.newOrderNotification', {
+              orderNumber: newOrder.order_number,
+              totalAmount: newOrder.total_amount,
+              currency: t('common.currency')
+            }));
 
             // Play notification sound if enabled
             playNotificationSound();
@@ -259,7 +290,7 @@ export const POSDashboard: React.FC = () => {
       }
       
       setOfflineOrders([]);
-      toast.success(`${t('pos.offline.syncComplete')} - تم تزامن ${offlineOrders.length} طلب`);
+      toast.success(t('pos.offline.syncSuccessMessage', { count: offlineOrders.length }));
     } catch (error) {
       console.error('Error syncing offline orders:', error);
     }
@@ -426,12 +457,12 @@ export const POSDashboard: React.FC = () => {
                           <span className="font-medium">#{order.order_number}</span>
                           {order.table_id && tablesMap[order.table_id] && (
                             <Badge variant="outline" className="bg-blue-100 text-blue-800">
-                              {t('common.table')} #{tablesMap[order.table_id].table_number}
+                              {t('pos.dashboard.tableBadge', { tableNumber: tablesMap[order.table_id].table_number })}
                             </Badge>
                           )}
                         </div>
                         <div className="text-sm text-muted-foreground">
-                          {new Date(order.created_at).toLocaleTimeString('ar-EG', { 
+                          {new Date(order.created_at).toLocaleTimeString(language, {
                             hour: '2-digit', 
                             minute: '2-digit' 
                           })}
@@ -561,7 +592,7 @@ export const POSDashboard: React.FC = () => {
                       <div className="flex items-center justify-between">
                         <CardTitle className="text-lg">#{order.order_number}</CardTitle>
                         <Badge variant="outline">
-                          {new Date(order.created_at).toLocaleTimeString('ar-EG', { 
+                          {new Date(order.created_at).toLocaleTimeString(language, {
                             hour: '2-digit', 
                             minute: '2-digit' 
                           })}

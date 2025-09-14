@@ -129,7 +129,7 @@ export const TableManagementTab: React.FC = () => {
     e.preventDefault();
     
     if (!user) {
-      toast.error("يجب تسجيل الدخول أولاً");
+      toast.error(t('pos.tables.loginRequired'));
       return;
     }
 
@@ -299,7 +299,7 @@ export const TableManagementTab: React.FC = () => {
                   id="table_number"
                   value={formData.table_number}
                   onChange={(e) => setFormData({ ...formData, table_number: e.target.value })}
-                  placeholder={isRTL ? "مثال: 1" : "e.g. 1"}
+                  placeholder={t('pos.tables.tableNumberPlaceholder')}
                   required
                 />
               </div>
@@ -315,7 +315,7 @@ export const TableManagementTab: React.FC = () => {
                   <SelectContent>
                     {[1, 2, 3, 4, 5, 6, 8, 10].map((num) => (
                       <SelectItem key={num} value={num.toString()}>
-                        {num} {num === 1 ? (isRTL ? 'شخص' : 'person') : (isRTL ? 'أشخاص' : 'people')}
+                        {num} {t(num === 1 ? 'pos.tables.person' : 'pos.tables.people')}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -327,7 +327,7 @@ export const TableManagementTab: React.FC = () => {
                   id="location_area"
                   value={formData.location_area}
                   onChange={(e) => setFormData({ ...formData, location_area: e.target.value })}
-                  placeholder={isRTL ? "مثال: الدور الأول، النافذة، الشرفة" : "e.g. First floor, Window, Terrace"}
+                  placeholder={t('pos.tables.locationPlaceholder')}
                 />
               </div>
               <div className="flex justify-end gap-2">
@@ -419,7 +419,7 @@ export const TableManagementTab: React.FC = () => {
               <CardHeader className="pb-2">
                 <div className="flex items-center justify-between">
                   <CardTitle className="text-lg">
-                    {isRTL ? `طاولة #${table.table_number}` : `Table #${table.table_number}`}
+                    {t('pos.tables.tableTitle', { number: table.table_number })}
                   </CardTitle>
                   <Badge className={getStatusColor(status)}>
                     {getStatusIcon(status)}
@@ -434,7 +434,7 @@ export const TableManagementTab: React.FC = () => {
                 <div className="space-y-3">
                   <div className="flex items-center gap-2 text-sm">
                     <Users className="w-4 h-4 text-muted-foreground" />
-                    <span>{table.capacity} {table.capacity === 1 ? (isRTL ? 'شخص' : 'person') : (isRTL ? 'أشخاص' : 'people')}</span>
+                    <span>{table.capacity} {t(table.capacity === 1 ? 'pos.tables.person' : 'pos.tables.people')}</span>
                   </div>
                   
                   {table.location_area && (
@@ -478,7 +478,7 @@ export const TableManagementTab: React.FC = () => {
                           const qrImageUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&format=png&data=${encodeURIComponent(dataUrl)}`;
                           window.open(qrImageUrl, '_blank');
                         } else {
-                          toast.error(isRTL ? "لا يوجد رمز QR لهذه الطاولة" : "No QR code for this table");
+                          toast.error(t('pos.tables.noQrCode'));
                         }
                       }}
                       className="flex-1"

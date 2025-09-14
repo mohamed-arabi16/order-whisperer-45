@@ -52,12 +52,14 @@
       "pendingApproval": "Pending Approval",
       "newOrder": "New Order!",
       "orderNumber": "Order Number",
+      "newOrderNotification": "New Order #{{orderNumber}} - {{totalAmount}} {{currency}}",
       "orderUpdated": "Order Updated",
       "statusChanged": "Status changed to",
       "loadError": "Error loading POS orders",
       "updateError": "Error updating order status",
       "online": "Online",
-      "offline": "Offline"
+      "offline": "Offline",
+      "tableBadge": "Table #{{tableNumber}}"
     },
     "status": {
       "new": "New",
@@ -112,7 +114,14 @@
       "totalCapacity": "Total Capacity",
       "edit": "Edit",
       "noTables": "No tables added yet",
-      "addFirstTable": "Add your first table"
+      "addFirstTable": "Add your first table",
+      "loginRequired": "You must be logged in to do that",
+      "tableNumberPlaceholder": "e.g. 1",
+      "person": "person",
+      "people": "people",
+      "locationPlaceholder": "e.g. First floor, Window, Terrace",
+      "tableTitle": "Table #{{number}}",
+      "noQrCode": "No QR code for this table"
     },
     "notifications": {
       "title": "Notification Settings",
@@ -127,7 +136,9 @@
       "description": "You're offline, changes will sync when connection is restored",
       "queuedOrders": "Queued Orders",
       "syncPending": "Sync Pending",
-      "syncComplete": "Sync Complete"
+      "syncComplete": "Sync Complete",
+      "syncSuccessMessage": "Synced {{count}} order",
+      "syncSuccessMessage_plural": "Synced {{count}} orders"
     }
   },
   "auth": {
@@ -420,12 +431,12 @@
     "welcome": "Welcome {{name}}",
     "stats": {
       "totalRestaurants": "Total Restaurants",
-      "paidPlans": "Paid Plans",
-      "activeAccounts": "Active Accounts",
-      "analytics": "Analytics",
       "activeCount": "{{count}} active",
+      "paidPlans": "Paid Plans",
       "outOfTotal": "out of {{total}}",
+      "activeAccounts": "Active Accounts",
       "activityPercentage": "{{percentage}}% active",
+      "analytics": "Analytics",
       "analyticsDescription": "View detailed analytics"
     },
     "tenantsManagement": {
