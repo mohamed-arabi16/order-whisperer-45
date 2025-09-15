@@ -44,7 +44,6 @@ const signUpSchema = z.object({
 const Auth = (): JSX.Element => {
   const { t, isRTL } = useTranslation();
   const { user, signUp, signIn, loading } = useAuth();
-  const { t, isRTL } = useTranslation();
   const [searchParams] = useSearchParams();
   const defaultTab = searchParams.get("tab") || "signin";
 

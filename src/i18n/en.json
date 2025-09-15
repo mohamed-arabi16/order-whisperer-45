@@ -1,4 +1,12 @@
 {
+  "meta": {
+    "title": "Digital Menu & POS Ordering System - Syria",
+    "description": "A lightweight, Arabic-first SaaS giving Syrian restaurants a unified digital menu with tap-to-order via QR/WhatsApp and a modern POS system for table service",
+    "og": {
+      "title": "Digital Menu & POS Ordering System - Syria", 
+      "description": "A lightweight, Arabic-first SaaS giving Syrian restaurants a unified digital menu with tap-to-order via QR/WhatsApp and a modern POS system for table service"
+    }
+  },
   "analytics": {
     "avgOrderValue": "Average Order Value Over Time",
     "avgOrderValueLabel": "Average Order Value",
@@ -507,6 +515,22 @@
     "premium": "Premium",
     "enterprise": "Enterprise"
   },
+  "header": {
+    "title": "Smart Restaurant System",
+    "nav": {
+      "home": "Home",
+      "features": "Features",
+      "pricing": "Pricing", 
+      "contact": "Contact"
+    }
+  },
+  "menuDemo": {
+    "title": "Menu Preview",
+    "categories": {
+      "appetizers": "Appetizers"
+    },
+    "addToCart": "Add to Cart"
+  },
   "features": {
     "analytics": {
       "description": "Track orders and most popular items",
@@ -961,14 +985,7 @@
     },
     "welcome": "Welcome, {{userName}} - Restaurant Dashboard"
   },
-  "pos": {
-    "title": "POS System - Development Plan",
-    "subtitle": "Comprehensive plan to develop an integrated POS system that works with the existing digital menu and WhatsApp ordering system",
-    "featuresTitle": "Planned Features",
-    "phasesTitle": "Development Phases",
-    "technicalArchTitle": "Technical Architecture",
-    "integrationTitle": "Integration Points with Current System",
-    "features": {
+  "header": {
       "orderManagement": {
         "title": "Real-time Order Management",
         "description": "Live order queue with status tracking from WhatsApp orders"
