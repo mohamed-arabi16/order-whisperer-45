@@ -501,7 +501,7 @@
     "dashboard": {
       "description": "Comprehensive management of all restaurants registered on the platform",
       "title": "Super Admin Dashboard"
-    }
+  },
   "plans": {
     "basic": "Basic",
     "premium": "Premium",
@@ -1099,5 +1099,5 @@
       "ready": "Ready",
       "completed": "Completed"
     }
-  },
+  }
 }
