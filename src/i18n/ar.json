@@ -443,7 +443,10 @@
       "activeAccounts": "الحسابات النشطة",
       "activityPercentage": "{{percentage}}% نشط",
       "analytics": "التحليلات",
-      "analyticsDescription": "عرض تحليلات مفصلة"
+      "analyticsDescription": "عرض تحليلات مفصلة",
+      "activeTenants": "المطاعم النشطة",
+      "totalRevenue": "إجمالي الإيرادات",
+      "totalTenants": "إجمالي المطاعم"
     },
     "tenantsManagement": {
       "title": "إدارة المطاعم",
@@ -454,35 +457,57 @@
     "filters": {
       "searchPlaceholder": "البحث بالاسم أو البريد الإلكتروني...",
       "status": {
-        "placeholder": "حالة الحساب",
-        "all": "جميع الحالات",
+        "placeholder": "جميع الحالات",
+        "all": "الكل",
         "active": "نشط",
         "inactive": "غير نشط"
       },
       "plan": {
-        "placeholder": "خطة الاشتراك",
-        "all": "جميع الخطط"
+        "placeholder": "جميع الخطط",
+        "all": "الكل"
       }
     },
     "noTenants": {
-      "title": "لا توجد مطاعم بعد",
-      "description": "ابدأ بإضافة أول مطعم على المنصة"
+      "title": "لا توجد مطاعم",
+      "description": "لم يتم العثور على مطاعم مسجلة في النظام"
     },
     "bulkActions": {
-      "title": "إجراءات متعددة",
-      "selectAll": "تحديد الكل ({{count}} محدد)",
+      "title": "الإجراءات المجمعة",
+      "selectAll": "تحديد الكل ({{count}})",
       "activate": "تفعيل المحدد",
       "deactivate": "إلغاء تفعيل المحدد",
-      "successTitle": "تم بنجاح",
-      "successDescription": "تم {{action}} {{count}} مطعم بنجاح"
+      "delete": "حذف المحدد"
     },
     "errors": {
-      "fetchTenantsTitle": "خطأ في تحميل المطاعم",
-      "fetchTenantsDescription": "حدث خطأ أثناء تحميل قائمة المطاعم",
-      "bulkActionTitle": "خطأ في الإجراء المتعدد",
-      "bulkActionDescription": "حدث خطأ أثناء تطبيق الإجراء على المطاعم المحددة"
+      "fetchTenantsTitle": "خطأ في جلب المطاعم",
+      "fetchTenantsDescription": "تعذر جلب قائمة المطاعم. يرجى المحاولة مرة أخرى.",
+      "bulkActionTitle": "خطأ في الإجراء المجمع",
+      "bulkActionDescription": "تعذر تنفيذ الإجراء المجمع. يرجى المحاولة مرة أخرى."
+    },
+    "tenants": {
+      "actions": "الإجراءات",
+      "address": "العنوان",
+      "createdAt": "تاريخ الإنشاء",
+      "edit": "تعديل",
+      "name": "اسم المطعم",
+      "owner": "المالك",
+      "phone": "الهاتف",
+      "plan": "الخطة",
+      "status": "الحالة",
+      "title": "إدارة المطاعم",
+      "view": "عرض"
+    },
+    "tenant": {
+      "email": "البريد الإلكتروني",
+      "owner": "المالك",
+      "registrationDate": "تاريخ التسجيل", 
+      "viewMenu": "عرض القائمة",
+      "viewPOS": "عرض نقاط البيع"
+    },
+    "dashboard": {
+      "description": "إدارة شاملة لجميع المطاعم المسجلة على المنصة",
+      "title": "لوحة تحكم المدير العام"
     }
-  },
   "plans": {
     "basic": "أساسي",
     "premium": "مميز",
@@ -923,50 +948,6 @@
     },
     "welcome": "مرحباً {{userName}} - لوحة تحكم المطعم"
   },
-  "superAdmin": {
-    "bulkActions": {
-      "activate": "تفعيل المحدد",
-      "deactivate": "إلغاء تفعيل المحدد",
-      "delete": "حذف المحدد"
-    },
-    "dashboard": {
-      "description": "إدارة شاملة لجميع المطاعم المسجلة على المنصة",
-      "title": "لوحة تحكم المدير العام"
-    },
-    "filters": {
-      "all": "الكل",
-      "active": "نشط",
-      "inactive": "غير نشط",
-      "plan": "خطة الاشتراك",
-      "status": "الحالة"
-    },
-    "stats": {
-      "activeTenants": "المطاعم النشطة",
-      "totalRevenue": "إجمالي الإيرادات",
-      "totalTenants": "إجمالي المطاعم"
-    },
-    "tenants": {
-      "actions": "الإجراءات",
-      "address": "العنوان",
-      "createdAt": "تاريخ الإنشاء",
-      "edit": "تعديل",
-      "name": "اسم المطعم",
-      "owner": "المالك",
-      "phone": "الهاتف",
-      "plan": "الخطة",
-      "status": "الحالة",
-      "title": "إدارة المطاعم",
-      "view": "عرض"
-    },
-    "tenant": {
-      "email": "البريد الإلكتروني",
-      "owner": "المالك",
-      "registrationDate": "تاريخ التسجيل", 
-      "viewMenu": "عرض القائمة",
-      "viewPOS": "عرض نقاط البيع"
-    },
-    "welcome": "مرحباً بالمدير العام"
-  },
   "pos": {
     "title": "نظام نقاط البيع (POS) - خطة التطوير",
     "subtitle": "خطة شاملة لتطوير نظام نقاط بيع متكامل يعمل مع نظام القائمة الرقمية وطلبات الواتساب الحالي",
@@ -1105,5 +1086,5 @@
       "ready": "جاهز",
       "completed": "مكتمل"
     }
-  }
+  },
 }

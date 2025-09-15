@@ -437,7 +437,10 @@
       "activeAccounts": "Active Accounts",
       "activityPercentage": "{{percentage}}% active",
       "analytics": "Analytics",
-      "analyticsDescription": "View detailed analytics"
+      "analyticsDescription": "View detailed analytics",
+      "activeTenants": "Active Restaurants",
+      "totalRevenue": "Total Revenue",
+      "totalTenants": "Total Restaurants"
     },
     "tenantsManagement": {
       "title": "Restaurant Management",
@@ -448,35 +451,57 @@
     "filters": {
       "searchPlaceholder": "Search by name or email...",
       "status": {
-        "placeholder": "Account Status",
-        "all": "All Statuses",
+        "placeholder": "All Statuses",
+        "all": "All",
         "active": "Active",
         "inactive": "Inactive"
       },
       "plan": {
-        "placeholder": "Subscription Plan",
-        "all": "All Plans"
+        "placeholder": "All Plans",
+        "all": "All"
       }
     },
     "noTenants": {
-      "title": "No restaurants yet",
-      "description": "Start by adding the first restaurant to the platform"
+      "title": "No Restaurants",
+      "description": "No restaurants found in the system"
     },
     "bulkActions": {
       "title": "Bulk Actions",
-      "selectAll": "Select All ({{count}} selected)",
+      "selectAll": "Select All ({{count}})",
       "activate": "Activate Selected",
       "deactivate": "Deactivate Selected",
-      "successTitle": "Success",
-      "successDescription": "Successfully {{action}} {{count}} restaurant(s)"
+      "delete": "Delete Selected"
     },
     "errors": {
-      "fetchTenantsTitle": "Error loading restaurants",
-      "fetchTenantsDescription": "An error occurred while loading the restaurant list",
-      "bulkActionTitle": "Bulk action error",
-      "bulkActionDescription": "An error occurred while applying the action to selected restaurants"
+      "fetchTenantsTitle": "Error Fetching Restaurants",
+      "fetchTenantsDescription": "Could not load restaurants list. Please try again.",
+      "bulkActionTitle": "Bulk Action Error",
+      "bulkActionDescription": "Could not perform bulk action. Please try again."
+    },
+    "tenants": {
+      "actions": "Actions",
+      "address": "Address",
+      "createdAt": "Created Date",
+      "edit": "Edit",
+      "name": "Restaurant Name",
+      "owner": "Owner",
+      "phone": "Phone",
+      "plan": "Plan",
+      "status": "Status",
+      "title": "Restaurant Management",
+      "view": "View"
+    },
+    "tenant": {
+      "email": "Email",
+      "owner": "Owner", 
+      "registrationDate": "Registration Date",
+      "viewMenu": "View Menu",
+      "viewPOS": "View POS"
+    },
+    "dashboard": {
+      "description": "Comprehensive management of all restaurants registered on the platform",
+      "title": "Super Admin Dashboard"
     }
-  },
   "plans": {
     "basic": "Basic",
     "premium": "Premium",
@@ -697,8 +722,8 @@
           "button": "View POS System Plan",
           "description": "Integrated point of sale system development plan",
           "title": "POS System"
-        }
-      }
+    }
+  },
     },
   "publicMenu": {
     "addToCart": "Add to Cart",
@@ -936,50 +961,6 @@
     },
     "welcome": "Welcome, {{userName}} - Restaurant Dashboard"
   },
-  "superAdmin": {
-    "bulkActions": {
-      "activate": "Activate Selected",
-      "deactivate": "Deactivate Selected",
-      "delete": "Delete Selected"
-    },
-    "dashboard": {
-      "description": "Comprehensive management of all restaurants registered on the platform",
-      "title": "Super Admin Dashboard"
-    },
-    "filters": {
-      "all": "All",
-      "active": "Active",
-      "inactive": "Inactive",
-      "plan": "Subscription Plan",
-      "status": "Status"
-    },
-    "stats": {
-      "activeTenants": "Active Restaurants",
-      "totalRevenue": "Total Revenue",
-      "totalTenants": "Total Restaurants"
-    },
-    "tenants": {
-      "actions": "Actions",
-      "address": "Address",
-      "createdAt": "Created Date",
-      "edit": "Edit",
-      "name": "Restaurant Name",
-      "owner": "Owner",
-      "phone": "Phone",
-      "plan": "Plan",
-      "status": "Status",
-      "title": "Restaurant Management",
-      "view": "View"
-    },
-    "tenant": {
-      "email": "Email",
-      "owner": "Owner", 
-      "registrationDate": "Registration Date",
-      "viewMenu": "View Menu",
-      "viewPOS": "View POS"
-    },
-    "welcome": "Welcome Super Admin"
-  },
   "pos": {
     "title": "POS System - Development Plan",
     "subtitle": "Comprehensive plan to develop an integrated POS system that works with the existing digital menu and WhatsApp ordering system",
@@ -1118,5 +1099,5 @@
       "ready": "Ready",
       "completed": "Completed"
     }
-  }
+  },
 }
