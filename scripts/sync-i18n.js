@@ -34,7 +34,7 @@ function syncObjects(enObj, arObj, prefix = '') {
         }
         syncObjects(enValue, arObj[key], currentKey);
       } else if (!Object.prototype.hasOwnProperty.call(arObj, key)) {
-        arObj[key] = ""; // Add missing keys with an empty string
+        arObj[key] = enValue; // Add missing keys with English text as placeholder
         missingKeysCount++;
         console.log(`Added missing key: ${currentKey}`);
       }
