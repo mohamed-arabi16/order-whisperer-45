@@ -516,6 +516,33 @@
     "premium": "Premium",
     "enterprise": "Enterprise"
   },
+  "header": {
+    "brand": "RestaurantOS",
+    "features": "Features",
+    "pricing": "Pricing",
+    "demo": "Demo",
+    "contact": "Contact",
+    "signIn": "Sign In",
+    "getStarted": "Get Started",
+    "dashboard": "Dashboard",
+    "signOut": "Sign Out",
+    "switchLanguage": "Switch to Arabic",
+    "languageName": "AR"
+  },
+  "hero": {
+    "title": "Digital Menu Platform for Restaurants",
+    "subtitle": "Transform your restaurant into a complete digital experience with smart menus and WhatsApp ordering",
+    "getStarted": "Get Started",
+    "watchDemo": "Watch Demo"
+  },
+  "menuDemo": {
+    "title": "Try Our Interactive Menu",
+    "subtitle": "Experience how your customers will interact with your digital menu",
+    "cartTitle": "Cart",
+    "cartEmpty": "Cart is empty",
+    "total": "Total",
+    "whatsappButton": "Send Order via WhatsApp"
+  },
   "features": {
     "analytics": {
       "description": "Track orders and most popular items",
