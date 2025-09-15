@@ -527,9 +527,43 @@
   "menuDemo": {
     "title": "Menu Preview",
     "categories": {
-      "appetizers": "Appetizers"
+      "appetizers": "Appetizers",
+      "mains": "Main Courses",
+      "desserts": "Desserts",
+      "drinks": "Drinks"
     },
-    "addToCart": "Add to Cart"
+    "items": [
+      {
+        "id": 1,
+        "name": "Hummus with Tahini",
+        "description": "Fresh hummus with tahini and olive oil",
+        "price": 45,
+        "category": "appetizers"
+      },
+      {
+        "id": 2,
+        "name": "Grilled Kebab",
+        "description": "Grilled meat kebab with vegetables and rice",
+        "price": 120,
+        "category": "mains"
+      },
+      {
+        "id": 3,
+        "name": "Baklava",
+        "description": "Traditional Middle Eastern pastry with pistachios and honey",
+        "price": 35,
+        "category": "desserts"
+      },
+      {
+        "id": 4,
+        "name": "Black Tea",
+        "description": "Traditional black tea",
+        "price": 15,
+        "category": "drinks"
+      }
+    ],
+    "addToCart": "Add to Cart",
+    "viewCart": "View Cart"
   },
   "features": {
     "analytics": {

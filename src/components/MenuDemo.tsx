@@ -20,12 +20,45 @@ import enTranslations from "@/i18n/en.json";
 const MenuDemo = (): JSX.Element => {
   const { t, language } = useTranslation();
   
-  // Access demo items directly from translations
-  const translations = {
-    ar: arTranslations,
-    en: enTranslations,
-  } as const;
-  const demoItems = translations[language].menuDemo.items;
+  // Define demo items directly to avoid translation type issues
+  const demoItems = [
+    {
+      id: 1,
+      name: language === 'ar' ? 'حمص بالطحينة' : 'Hummus with Tahini',
+      description: language === 'ar' ? 'حمص طازج مع الطحينة وزيت الزيتون' : 'Fresh hummus with tahini and olive oil',
+      price: 45,
+      category: 'appetizers',
+      image: '/placeholder.svg',
+      dietary_preferences: ['vegan']
+    },
+    {
+      id: 2,
+      name: language === 'ar' ? 'كباب مشوي' : 'Grilled Kebab',
+      description: language === 'ar' ? 'كباب لحم مشوي مع الخضار والأرز' : 'Grilled meat kebab with vegetables and rice',
+      price: 120,
+      category: 'mains',
+      image: '/placeholder.svg',
+      dietary_preferences: ['spicy']
+    },
+    {
+      id: 3,
+      name: language === 'ar' ? 'بقلاوة' : 'Baklava',
+      description: language === 'ar' ? 'حلى شرقي بالفستق والعسل' : 'Traditional Middle Eastern pastry with pistachios and honey',
+      price: 35,
+      category: 'desserts',
+      image: '/placeholder.svg',
+      dietary_preferences: []
+    },
+    {
+      id: 4,
+      name: language === 'ar' ? 'شاي أحمر' : 'Black Tea',
+      description: language === 'ar' ? 'شاي أحمر تقليدي' : 'Traditional black tea',
+      price: 15,
+      category: 'drinks',
+      image: '/placeholder.svg',
+      dietary_preferences: []
+    }
+  ];
   
   const [cart, setCart] = useState<
     { id: number; name: string; price: number; quantity: number }[]

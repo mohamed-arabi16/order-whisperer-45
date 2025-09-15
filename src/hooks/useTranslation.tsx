@@ -5,7 +5,7 @@ import arTranslations from "@/i18n/ar.json";
 import enTranslations from "@/i18n/en.json";
 
 type Language = "ar" | "en";
-type Translations = typeof arTranslations;
+type Translations = Record<string, any>;
 
 interface TranslationContextType {
   language: Language;
@@ -18,8 +18,8 @@ interface TranslationContextType {
 const TranslationContext = createContext<TranslationContextType | null>(null);
 
 const translations: Record<Language, Translations> = {
-  ar: arTranslations,
-  en: enTranslations,
+  ar: arTranslations as Translations,
+  en: enTranslations as Translations,
 };
 
 interface TranslationProviderProps {

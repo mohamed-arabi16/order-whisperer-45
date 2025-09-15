@@ -533,9 +533,43 @@
   "menuDemo": {
     "title": "معاينة القائمة",
     "categories": {
-      "appetizers": "المقبلات"
+      "appetizers": "المقبلات",
+      "mains": "الأطباق الرئيسية",
+      "desserts": "الحلويات",
+      "drinks": "المشروبات"
     },
-    "addToCart": "إضافة للسلة"
+    "items": [
+      {
+        "id": 1,
+        "name": "حمص بالطحينة",
+        "description": "حمص طازج مع الطحينة وزيت الزيتون",
+        "price": 45,
+        "category": "appetizers"
+      },
+      {
+        "id": 2,
+        "name": "كباب مشوي",
+        "description": "كباب لحم مشوي مع الخضار والأرز",
+        "price": 120,
+        "category": "mains"
+      },
+      {
+        "id": 3,
+        "name": "بقلاوة",
+        "description": "حلى شرقي بالفستق والعسل",
+        "price": 35,
+        "category": "desserts"
+      },
+      {
+        "id": 4,
+        "name": "شاي أحمر",
+        "description": "شاي أحمر تقليدي",
+        "price": 15,
+        "category": "drinks"
+      }
+    ],
+    "addToCart": "إضافة للسلة",
+    "viewCart": "عرض السلة"
   },
   "features": {
     "analytics": {
