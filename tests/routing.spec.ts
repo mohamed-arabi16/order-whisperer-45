@@ -31,3 +31,34 @@ test.describe('POS Access Control', () => {
     await expect(page.locator('h3:has-text("POS System access requires Premium subscription")')).toBeVisible();
   });
 });
+
+test.describe('Contact Form', () => {
+  test('should allow submitting the form multiple times and reset the form', async ({ page }) => {
+    await page.route('**/submit-contact-form', async (route) => {
+      await route.fulfill({ status: 200, json: { success: true } });
+    });
+
+    await page.goto('/contact');
+    await expect(page.locator('.animate-spin')).not.toBeVisible();
+
+    await page.fill('input[name="name"]', 'Test User');
+    await page.fill('input[name="email"]', 'test@example.com');
+    await page.fill('textarea[name="message"]', 'This is a test message.');
+    await page.click('button[type="submit"]');
+    await page.waitForResponse('**/submit-contact-form');
+
+    await expect(page.locator('input[name="name"]')).toHaveValue('');
+    await expect(page.locator('input[name="email"]')).toHaveValue('');
+    await expect(page.locator('textarea[name="message"]')).toHaveValue('');
+
+    await page.fill('input[name="name"]', 'Test User 2');
+    await page.fill('input[name="email"]', 'test2@example.com');
+    await page.fill('textarea[name="message"]', 'This is another test message.');
+    await page.click('button[type="submit"]');
+    await page.waitForResponse('**/submit-contact-form');
+
+    await expect(page.locator('input[name="name"]')).toHaveValue('');
+    await expect(page.locator('input[name="email"]')).toHaveValue('');
+    await expect(page.locator('textarea[name="message"]')).toHaveValue('');
+  });
+});

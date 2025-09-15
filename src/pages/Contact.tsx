@@ -16,7 +16,6 @@ import {
 } from "@/components/ui/form";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/components/ui/use-toast";
-import StaggeredFadeIn from "@/components/StaggeredFadeIn";
 import { Github, Twitter, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 
 const formSchema = z.object({
@@ -71,17 +70,15 @@ const Contact = (): JSX.Element => {
       dir={isRTL ? "rtl" : "ltr"}
     >
       <div className="container mx-auto px-4">
-        <StaggeredFadeIn>
-          <h1 className="text-4xl font-bold text-center mb-4">
-            {t("contact.title")}
-          </h1>
-          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12">
-            {t("contact.description")}
-          </p>
-        </StaggeredFadeIn>
+        <h1 className="text-4xl font-bold text-center mb-4">
+          {t("contact.title")}
+        </h1>
+        <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12">
+          {t("contact.description")}
+        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <StaggeredFadeIn>
+          <div>
             <Card>
               <CardHeader>
                 <CardTitle>{t("contact.formTitle")}</CardTitle>
@@ -170,9 +167,9 @@ const Contact = (): JSX.Element => {
                 </Form>
               </CardContent>
             </Card>
-          </StaggeredFadeIn>
+          </div>
 
-          <StaggeredFadeIn>
+          <div>
             <Card>
               <CardHeader>
                 <CardTitle>Our Information</CardTitle>
@@ -203,7 +200,7 @@ const Contact = (): JSX.Element => {
                 </div>
               </CardContent>
             </Card>
-          </StaggeredFadeIn>
+          </div>
         </div>
       </div>
     </div>
