@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "@/hooks/useAuth";
-import { Navigate } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import { POSDashboard } from "@/components/pos/POSDashboard";
 import { supabase } from "@/integrations/supabase/client";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -10,33 +10,29 @@ import { useTranslation } from "@/hooks/useTranslation";
  * Only accessible by authenticated restaurant owners and super admins
  */
 const POSSystem = (): JSX.Element => {
-  const { user, loading, isAdmin, isRestaurantOwner } = useAuth();
+  const { slug } = useParams();
+  const { user, loading, isAdmin } = useAuth();
   const { t } = useTranslation();
-  const [tenantSubscription, setTenantSubscription] = useState<string | null>(null);
+  const [tenant, setTenant] = useState<{ id: string; subscription_plan: string; } | null>(null);
   const [checkingSubscription, setCheckingSubscription] = useState(true);
 
   useEffect(() => {
     const checkSubscription = async () => {
-      if (!user || !isRestaurantOwner) return;
+      if (!slug) {
+        setCheckingSubscription(false);
+        return;
+      }
 
       try {
-        // Get user's profile
-        const { data: profile } = await supabase
-          .from('profiles')
-          .select('id')
-          .eq('user_id', user.id)
-          .single();
-
-        if (!profile) return;
-
-        // Get tenant subscription
-        const { data: tenant } = await supabase
+        const { data: tenantData, error } = await supabase
           .from('tenants')
-          .select('subscription_plan')
-          .eq('owner_id', profile.id)
+          .select('id, subscription_plan')
+          .eq('slug', slug)
           .single();
 
-        setTenantSubscription(tenant?.subscription_plan || 'basic');
+        if (error) throw error;
+
+        setTenant(tenantData);
       } catch (error) {
         console.error('Error checking subscription:', error);
       } finally {
@@ -45,7 +41,7 @@ const POSSystem = (): JSX.Element => {
     };
 
     checkSubscription();
-  }, [user, isRestaurantOwner]);
+  }, [slug]);
 
   if (loading || checkingSubscription) {
     return (
@@ -58,13 +54,12 @@ const POSSystem = (): JSX.Element => {
     );
   }
 
-  if (!user || (!isAdmin && !isRestaurantOwner)) {
+  if (!user) {
     return <Navigate to="/auth" replace />;
   }
 
-  // Check if restaurant owner needs premium subscription
-  if (isRestaurantOwner && tenantSubscription !== 'premium') {
-    return <Navigate to="/pos-access" replace />;
+  if (!isAdmin && tenant?.subscription_plan !== 'premium') {
+    return <Navigate to={`/pos-access/${slug}`} replace />;
   }
 
   return (

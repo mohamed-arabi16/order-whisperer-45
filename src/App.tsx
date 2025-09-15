@@ -58,8 +58,8 @@ const App = (): JSX.Element => (
                     <Route path="/branding" element={<RestaurantBranding />} />
                     <Route path="/qr-code" element={<QRCodeGenerator />} />
                     <Route path="/menu/:slug" element={<PublicMenu />} />
-                    <Route path="/pos/:slug" element={<POSAccess />} />
-                    <Route path="/pos-system" element={<POSSystem />} />
+                    <Route path="/pos-access/:slug" element={<POSAccess />} />
+                    <Route path="/pos-system/:slug" element={<POSSystem />} />
                     <Route path="/pricing" element={<Pricing />} />
                     <Route path="/contact" element={<Contact />} />
                     {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
