@@ -509,61 +509,12 @@
     "dashboard": {
       "description": "Comprehensive management of all restaurants registered on the platform",
       "title": "Super Admin Dashboard"
+    }
   },
   "plans": {
     "basic": "Basic",
     "premium": "Premium",
     "enterprise": "Enterprise"
-  },
-  "header": {
-    "title": "Smart Restaurant System",
-    "nav": {
-      "home": "Home",
-      "features": "Features",
-      "pricing": "Pricing", 
-      "contact": "Contact"
-    }
-  },
-  "menuDemo": {
-    "title": "Menu Preview",
-    "categories": {
-      "appetizers": "Appetizers",
-      "mains": "Main Courses",
-      "desserts": "Desserts",
-      "drinks": "Drinks"
-    },
-    "items": [
-      {
-        "id": 1,
-        "name": "Hummus with Tahini",
-        "description": "Fresh hummus with tahini and olive oil",
-        "price": 45,
-        "category": "appetizers"
-      },
-      {
-        "id": 2,
-        "name": "Grilled Kebab",
-        "description": "Grilled meat kebab with vegetables and rice",
-        "price": 120,
-        "category": "mains"
-      },
-      {
-        "id": 3,
-        "name": "Baklava",
-        "description": "Traditional Middle Eastern pastry with pistachios and honey",
-        "price": 35,
-        "category": "desserts"
-      },
-      {
-        "id": 4,
-        "name": "Black Tea",
-        "description": "Traditional black tea",
-        "price": 15,
-        "category": "drinks"
-      }
-    ],
-    "addToCart": "Add to Cart",
-    "viewCart": "View Cart"
   },
   "features": {
     "analytics": {
@@ -598,26 +549,6 @@
     "quickLinks": "Quick Links",
     "support": "Support",
     "supportText": "Get help setting up your digital restaurant."
-  },
-  "header": {
-    "analytics": "Analytics",
-    "brand": "RestaurantOS",
-    "branding": "Branding",
-    "contact": "Contact",
-    "dashboard": "Dashboard",
-    "demo": "Demo",
-    "features": "Features",
-    "getStarted": "Get Started",
-    "home": "Home",
-    "language": "Language",
-    "languageName": "ع",
-    "manageMenu": "Manage Menu",
-    "pricing": "Pricing",
-    "profile": "Profile",
-    "qrCode": "QR Code",
-    "signIn": "Sign In",
-    "signOut": "Sign Out",
-    "switchLanguage": "Switch to Arabic"
   },
   "hero": {
     "getStarted": "Get Started",
@@ -662,66 +593,6 @@
     "encourageFeedback": "Be the first to review this restaurant!",
     "toggleAvailability": "Toggle Availability",
     "uploadImage": "Upload Image"
-  },
-  "menuDemo": {
-    "cartEmpty": "Your cart is empty",
-    "cartTitle": "Your Order",
-    "currency": "S.P",
-    "dietary": {
-      "gluten-free": "Gluten-free",
-      "spicy": "Spicy",
-      "vegetarian": "Vegetarian"
-    },
-    "items": [
-      {
-        "description": "Grilled chicken pieces with vegetables and rice",
-        "dietary_preferences": [
-          "spicy"
-        ],
-        "id": 1,
-        "image": "https://images.unsplash.com/photo-1633945274417-b5a8ac5e2a2a?w=300&h=200&fit=crop",
-        "name": "Shish Tawook",
-        "price": 45000
-      },
-      {
-        "description": "Traditional Lebanese salad with fresh vegetables",
-        "dietary_preferences": [
-          "vegetarian",
-          "gluten-free"
-        ],
-        "id": 2,
-        "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=300&h=200&fit=crop",
-        "name": "Fattoush Salad",
-        "price": 25000
-      },
-      {
-        "description": "Creamy hummus with tahini and olive oil",
-        "dietary_preferences": [
-          "vegetarian"
-        ],
-        "id": 3,
-        "image": "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=300&h=200&fit=crop",
-        "name": "Hummus with Tahini",
-        "price": 18000
-      }
-    ],
-    "subtitle": "See how your restaurant's digital menu will look to customers",
-    "title": "Digital Menu Preview",
-    "total": "Total",
-    "whatsappButton": "Send Order via WhatsApp"
-  },
-  "meta": {
-    "description": "Modern restaurant management platform with Arabic support, QR ordering, and WhatsApp integration for Middle Eastern restaurants.",
-    "og": {
-      "description": "Comprehensive restaurant platform with Arabic support, QR ordering, and WhatsApp integration for Middle Eastern restaurants.",
-      "title": "RestaurantOS - Modern Restaurant Management Platform"
-    },
-    "title": "RestaurantOS - Modern Restaurant Management Platform"
-  },
-  "plans": {
-    "basic": "Basic",
-    "premium": "Premium", 
-    "enterprise": "Enterprise"
   },
   "posAccess": {
     "premiumRequired": "POS System access requires Premium subscription",
@@ -775,11 +646,12 @@
           "ROS will be removed"
         ],
         "cta": "Contact Sales"
-        },
-        "pos": {
-          "button": "View POS System Plan",
-          "description": "Integrated point of sale system development plan",
-          "title": "POS System"
+      },
+      "pos": {
+        "button": "View POS System Plan",
+        "description": "Integrated point of sale system development plan",
+        "title": "POS System"
+      }
     }
   },
   "publicMenu": {
@@ -1017,137 +889,5 @@
       "noTenantTitle": "Restaurant Not Found"
     },
     "welcome": "Welcome, {{userName}} - Restaurant Dashboard"
-  },
-  "header": {
-      "orderManagement": {
-        "title": "Real-time Order Management",
-        "description": "Live order queue with status tracking from WhatsApp orders"
-      },
-      "kitchenDisplay": {
-        "title": "Kitchen Display System (KDS)",
-        "description": "Digital screens showing order details and preparation times"
-      },
-      "staffManagement": {
-        "title": "Staff Management",
-        "description": "Role-based access and performance tracking"
-      },
-      "analytics": {
-        "title": "Advanced Analytics",
-        "description": "Real-time sales, inventory, and performance metrics"
-      },
-      "printing": {
-        "title": "Receipt & Kitchen Printing",
-        "description": "Automated printing for orders and receipts"
-      },
-      "mobileApp": {
-        "title": "Mobile POS App",
-        "description": "Tablet/mobile interface for order management"
-      },
-      "offline": {
-        "title": "Offline Capability",
-        "description": "Continue operations during network disruptions"
-      },
-      "payment": {
-        "title": "Payment Processing",
-        "description": "Integration with local and international payment gateways"
-      },
-      "inventory": {
-        "title": "Inventory Management",
-        "description": "Track ingredients and menu item availability"
-      },
-      "notifications": {
-        "title": "Smart Notifications",
-        "description": "Real-time alerts for orders, low inventory, and issues"
-      }
-    },
-    "phases": {
-      "phase1": {
-        "title": "Foundation & Order Management",
-        "duration": "2-3 months",
-        "features": [
-          "Real-time order dashboard integration with WhatsApp orders",
-          "Basic kitchen display system",
-          "Order status tracking (New → Preparing → Ready → Delivered)",
-          "Staff user management and roles"
-        ]
-      },
-      "phase2": {
-        "title": "Payment & Customer Management",
-        "duration": "2-3 months",
-        "features": [
-          "Payment gateway integrations (Stripe, local processors)",
-          "Customer database and order history",
-          "Receipt generation and printing",
-          "Basic inventory tracking"
-        ]
-      },
-      "phase3": {
-        "title": "Advanced Features & Analytics",
-        "duration": "3-4 months",
-        "features": [
-          "Advanced analytics and reporting dashboard",
-          "Inventory management with low-stock alerts",
-          "Mobile POS application",
-          "Offline capability and data synchronization"
-        ]
-      },
-      "phase4": {
-        "title": "Enterprise Features",
-        "duration": "2-3 months",
-        "features": [
-          "Multi-location support",
-          "Advanced staff scheduling and performance tracking",
-          "Integration with accounting software",
-          "Custom reporting and business intelligence"
-        ]
-      }
-    },
-    "status": {
-      "planned": "Planned",
-      "inProgress": "In Progress",
-      "completed": "Completed"
-    },
-    "architecture": {
-      "frontend": "Frontend Components",
-      "backend": "Backend Services",
-      "frontendFeatures": [
-        "POS Dashboard (React/TypeScript)",
-        "Kitchen Display System Interface",
-        "Mobile POS App (PWA)",
-        "Real-time order management",
-        "Payment processing interface"
-      ],
-      "backendFeatures": [
-        "WebSocket connections for real-time updates",
-        "Supabase Edge Functions for POS logic",
-        "Payment gateway integrations",
-        "Inventory management system",
-        "Analytics and reporting engine"
-      ]
-    },
-    "integration": {
-      "whatsapp": {
-        "title": "WhatsApp Order Integration",
-        "description": "Automatically convert WhatsApp orders to POS system for processing"
-      },
-      "menuSync": {
-        "title": "Menu Synchronization",
-        "description": "Automatic synchronization between digital menu and POS system"
-      },
-      "analyticsEnhancement": {
-        "title": "Analytics Enhancement",
-        "description": "Enhance existing analytics system by adding POS data"
-      }
-    },
-    "dashboard": {
-      "title": "POS System",
-      "description": "Order & kitchen management",
-      "orderQueue": "Order Queue",
-      "kitchenDisplay": "Kitchen Display",
-      "newOrders": "New Orders",
-      "preparing": "Preparing",
-      "ready": "Ready",
-      "completed": "Completed"
-    }
   }
 }
