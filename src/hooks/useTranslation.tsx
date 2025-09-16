@@ -52,6 +52,18 @@ export const TranslationProvider: React.FC<TranslationProviderProps> = ({
     }
   }, []);
 
+  // Listen for storage changes across tabs/windows
+  useEffect(() => {
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === "language" && e.newValue && ["ar", "en"].includes(e.newValue)) {
+        setLanguage(e.newValue as Language);
+      }
+    };
+    
+    window.addEventListener("storage", handleStorageChange);
+    return () => window.removeEventListener("storage", handleStorageChange);
+  }, []);
+
   useEffect(() => {
     // This effect runs whenever the language changes
     document.documentElement.dir = language === "ar" ? "rtl" : "ltr";

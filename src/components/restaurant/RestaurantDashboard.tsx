@@ -398,10 +398,23 @@ const RestaurantDashboard = (): JSX.Element => {
           
           <Card
             className="shadow-card hover:shadow-warm transition-smooth cursor-pointer"
-            onClick={() => window.location.href = '/pos-system'}
+            onClick={() => {
+              // Get the tenant slug from profile or construct the correct URL
+              const tenantSlug = profile?.tenants?.[0]?.slug;
+              if (tenantSlug) {
+                window.location.href = `/pos-system/${tenantSlug}`;
+              } else {
+                console.error('Unable to access POS system - no tenant slug found');
+              }
+            }}
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
-                window.location.href = '/pos-system';
+                const tenantSlug = profile?.tenants?.[0]?.slug;
+                if (tenantSlug) {
+                  window.location.href = `/pos-system/${tenantSlug}`;
+                } else {
+                  console.error('Unable to access POS system - no tenant slug found');
+                }
               }
             }}
             role="button"

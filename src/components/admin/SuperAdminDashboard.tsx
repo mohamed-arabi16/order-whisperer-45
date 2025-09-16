@@ -469,7 +469,7 @@ const SuperAdminDashboard = (): JSX.Element => {
                         {t('superAdmin.tenant.viewMenu')}
                       </Button>
                       {tenant.subscription_plan === 'premium' ? (
-                        <Button variant="outline" size="sm" onClick={() => navigate(`/pos/${tenant.slug}`)}>
+                        <Button variant="outline" size="sm" onClick={() => navigate(`/pos-system/${tenant.slug}`)}>
                           {t('superAdmin.tenant.viewPOS')}
                         </Button>
                       ) : (
