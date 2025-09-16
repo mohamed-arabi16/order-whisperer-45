@@ -541,7 +541,13 @@
     "cartTitle": "Cart",
     "cartEmpty": "Cart is empty",
     "total": "Total",
-    "whatsappButton": "Send Order via WhatsApp"
+    "whatsappButton": "Send Order via WhatsApp",
+    "dietary": {
+      "vegetarian": "Vegetarian",
+      "spicy": "Spicy",
+      "vegan": "Vegan",
+      "gluten-free": "Gluten-Free"
+    }
   },
   "features": {
     "analytics": {
@@ -576,12 +582,6 @@
     "quickLinks": "Quick Links",
     "support": "Support",
     "supportText": "Get help setting up your digital restaurant."
-  },
-  "hero": {
-    "getStarted": "Get Started",
-    "subtitle": "Transform your restaurant into an integrated digital experience with smart menus and WhatsApp orders",
-    "title": "Digital Menu Platform for Restaurants",
-    "watchDemo": "Watch Demo"
   },
   "menu": {
     "addCategory": "Add Category",

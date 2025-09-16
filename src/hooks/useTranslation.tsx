@@ -1,6 +1,5 @@
 import React from "react";
 import { createContext, useContext, useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import type { ReactNode } from "react";
 import arTranslations from "@/i18n/ar.json";
 import enTranslations from "@/i18n/en.json";
@@ -36,11 +35,10 @@ export const TranslationProvider: React.FC<TranslationProviderProps> = ({
   children,
 }) => {
   const [language, setLanguage] = useState<Language>("ar"); // Default to Arabic
-  const location = useLocation();
 
   useEffect(() => {
     // Priority: URL query parameter > localStorage > default
-    const urlParams = new URLSearchParams(location.search);
+    const urlParams = new URLSearchParams(window.location.search);
     const langFromUrl = urlParams.get("lang") as Language;
 
     if (langFromUrl && ["ar", "en"].includes(langFromUrl)) {
@@ -52,7 +50,7 @@ export const TranslationProvider: React.FC<TranslationProviderProps> = ({
         setLanguage(savedLanguage);
       }
     }
-  }, [location.search]);
+  }, []);
 
   useEffect(() => {
     // This effect runs whenever the language changes
